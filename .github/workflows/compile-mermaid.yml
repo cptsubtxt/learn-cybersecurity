@@ -39,6 +39,11 @@ jobs:
           OUTPUT_FORMAT="${{ github.event.inputs.output_format || 'png' }}"
           echo "output_format=$OUTPUT_FORMAT" >> $GITHUB_OUTPUT
 
+      - name: create mmdc config
+        run: | 
+          echo '{ "args": ["--no-sandbox"]}' > puppeteer-config.json
+
+
       - name: Compile mind-maps
         run: |
           OUTPUT_FORMAT="${{ steps.set_format.outputs.output_format }}"
@@ -50,7 +55,7 @@ jobs:
               output_file="compiled-diagrams/mind-maps/${base_name}.${OUTPUT_FORMAT}"
               echo "Compiling $file to $output_file"
               # ADDED --no-sandbox HERE
-              mmdc -i "$file" -o "$output_file" -t default --no-sandbox || true
+              mmdc -i "$file" -o "$output_file" -t default -p puppeteer-config.json || true
             fi
           done
         continue-on-error: true # Allow the job to continue even if a single compilation fails
@@ -66,7 +71,7 @@ jobs:
               output_file="compiled-diagrams/illustrations/${base_name}.${OUTPUT_FORMAT}"
               echo "Compiling $file to $output_file"
               # ADDED --no-sandbox HERE
-              mmdc -i "$file" -o "$output_file" -t default --no-sandbox || true
+              mmdc -i "$file" -o "$output_file" -t default -p puppeteer-config.json || true
             fi
           done
         continue-on-error: true

@@ -1,0 +1,36 @@
+graph TD
+    subgraph "TCP/IP Model - Layers"
+        A[5: Application Layer] --> B[4: Transport Layer]
+        B --> C[3: Internet Layer]
+        C --> D[2: Network Access Layer]
+        D --> E[1: Physical Layer]
+    end
+
+    subgraph "Data Flow (Encapsulation)"
+        F[Data] --> G[Application Data]
+        G --> H[Segments/Datagrams]
+        H --> I[IP Datagrams]
+        I --> J[Frames]
+        J --> K[Bits]
+    end
+
+    subgraph "Key Protocols/Devices (Examples)"
+        L(HTTP, FTP, SMTP, DNS) --> A
+        M(TCP, UDP) --> B
+        N(IP, ARP, ICMP, Routers) --> C
+        O(Ethernet, Wi-Fi, PPP, Switches) --> D
+        P(Cables, Hubs, NICs) --> E
+    end
+
+    A -- "Uses" --> L
+    B -- "Ensures" --> M
+    C -- "Routes" --> N
+    D -- "Frames" --> O
+    E -- "Transmits" --> P
+
+    F --> G
+    G --> A
+    H --> B
+    I --> C
+    J --> D
+    K --> E

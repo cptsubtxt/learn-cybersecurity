@@ -1,6 +1,11 @@
 name: Generate PDFs from MD
-on: push
-
+on:
+  push:
+    branches:
+      - main # or master, or any branch you want this to run on
+    paths:
+      - 'docs/*.md'
+      
 jobs:
   convert_via_pandoc:
     runs-on: ubuntu-22.04

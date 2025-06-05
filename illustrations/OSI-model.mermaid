@@ -1,14 +1,14 @@
 graph TD
-    subgraph OSI Model - Layers
-        A[7. Application Layer] --> B[6. Presentation Layer]
-        B --> C[5. Session Layer]
-        C --> D[4. Transport Layer]
-        D --> E[3. Network Layer]
-        E --> F[2. Data Link Layer]
-        F --> G[1. Physical Layer]
+    subgraph "OSI Model - Layers"
+        A[7: Application Layer] --> B[6: Presentation Layer]
+        B --> C[5: Session Layer]
+        C --> D[4: Transport Layer]
+        D --> E[3: Network Layer]
+        E --> F[2: Data Link Layer]
+        F --> G[1: Physical Layer]
     end
 
-    subgraph Data Flow (Encapsulation)
+    subgraph "Data Flow (Encapsulation)"
         H[Data] --> I[Application Data]
         I --> J[Presented Data]
         J --> K[Session Data]
@@ -18,7 +18,7 @@ graph TD
         N --> O[Bits]
     end
 
-    subgraph Key Protocols/Devices (Examples)
+    subgraph "Key Protocols/Devices (Examples)"
         P(HTTP, FTP, SMTP) --> A
         Q(JPEG, MPEG, SSL/TLS) --> B
         R(APIs, Sockets) --> C

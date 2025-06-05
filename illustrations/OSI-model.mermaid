@@ -1,0 +1,46 @@
+graph TD
+    subgraph OSI Model - Layers
+        A[7. Application Layer] --> B[6. Presentation Layer]
+        B --> C[5. Session Layer]
+        C --> D[4. Transport Layer]
+        D --> E[3. Network Layer]
+        E --> F[2. Data Link Layer]
+        F --> G[1. Physical Layer]
+    end
+
+    subgraph Data Flow (Encapsulation)
+        H[Data] --> I[Application Data]
+        I --> J[Presented Data]
+        J --> K[Session Data]
+        K --> L[Segments]
+        L --> M[Packets/Datagrams]
+        M --> N[Frames]
+        N --> O[Bits]
+    end
+
+    subgraph Key Protocols/Devices (Examples)
+        P(HTTP, FTP, SMTP) --> A
+        Q(JPEG, MPEG, SSL/TLS) --> B
+        R(APIs, Sockets) --> C
+        S(TCP, UDP) --> D
+        T(IP, ICMP, Routers) --> E
+        U(Ethernet, ARP, Switches) --> F
+        V(Cables, Hubs, NICs) --> G
+    end
+
+    A -- "Uses" --> P
+    B -- "Uses" --> Q
+    C -- "Manages" --> R
+    D -- "Ensures" --> S
+    E -- "Routes" --> T
+    F -- "Frames" --> U
+    G -- "Transmits" --> V
+
+    H --> I
+    I --> A
+    J --> B
+    K --> C
+    L --> D
+    M --> E
+    N --> F
+    O --> G

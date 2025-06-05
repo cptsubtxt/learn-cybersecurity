@@ -49,7 +49,8 @@ jobs:
               base_name=$(basename "$base_name" .mmd)
               output_file="compiled-diagrams/mind-maps/${base_name}.${OUTPUT_FORMAT}"
               echo "Compiling $file to $output_file"
-              mmdc -i "$file" -o "$output_file" -t default || true # Added || true to continue on individual file errors
+              # ADDED --no-sandbox HERE
+              mmdc -i "$file" -o "$output_file" -t default --no-sandbox || true
             fi
           done
         continue-on-error: true # Allow the job to continue even if a single compilation fails
@@ -64,7 +65,8 @@ jobs:
               base_name=$(basename "$base_name" .mmd)
               output_file="compiled-diagrams/illustrations/${base_name}.${OUTPUT_FORMAT}"
               echo "Compiling $file to $output_file"
-              mmdc -i "$file" -o "$output_file" -t default || true
+              # ADDED --no-sandbox HERE
+              mmdc -i "$file" -o "$output_file" -t default --no-sandbox || true
             fi
           done
         continue-on-error: true
@@ -74,5 +76,5 @@ jobs:
         with:
           name: compiled-mermaid-diagrams-${{ steps.set_format.outputs.output_format }}
           path: compiled-diagrams/
-          retention-days: 5 # How long to keep the artifact (e.g., 5 days)
-          if-no-files-found: warn # Warn if no files are found, but don't fail the action
+          retention-days: 5
+          if-no-files-found: warn

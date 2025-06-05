@@ -41,7 +41,7 @@ jobs:
 
       - name: create mmdc config
         run: | 
-          echo '{ "args": ["--no-sandbox"]}' > puppeteer-config.json
+          echo '{ "args": ["--no-sandbox"] }' | jq '.' > puppeteer-config.json
 
 
       - name: Compile mind-maps

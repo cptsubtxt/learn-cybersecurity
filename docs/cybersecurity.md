@@ -8,20 +8,48 @@ keywords: [Cybersecurity, Threads, Tools, Burp Suite, ZAP, OWASP]
 book: true
 lang: "en"
 titlepage: true
+toc-own-page: true
 classoption: [oneside]
 ...
 
 # Introduction
 
-The following text is meant to be your Guide to the cybersecurity learning path.
+## Your Cybersecurity Journey starts here
 
-In the first section we are covering the foundations of cybersecurity topics to get a broad understanding of
+Welcome and thank you for coming with us on that journey. So buckle up and we are going to check out the fundamental Concepts that build the Cybersecurity space.
 
-Aftewards the second section will be going deeper into the domain of Webapplications and their various variants.
+Afterwards we will learn about the different kinds of attacks. During the journey we always try to do some quizzes and test out differnt attacks.
 
-Happy Learning!
+We also try to sort out different technics to make our knowlegde usable in a structured way to explore systems.
+
+So happy learning and nice adventures!
+
+## A brief history of cybersecurity
+
+Here is a footnote reference,[^1] and another.[^longnote]
+
+[^1]: Here is the footnote.
+[^longnote]: Here's one with multiple blocks.
+
+    Subsequent paragraphs are indented to show that they
+    belong to the previous footnote.
+
+        { some.code }
+
+    The whole paragraph can be indented, or just the first
+    line. In this way, multi-paragraph footnotes work like
+    multi-paragraph list items.
+
+This paragraph won't be part of the note, because it
+isn't indented.
+
+## How to learn cybersecurity
+
+## How to setup a training environment
 
 # I. Foundations of Cybersecurity & Networking
+
+When starting in the field of cyber security it is crucual to understand the foundations of core cyber security concepts.
 
 ## A. Core Cybersecurity Concepts
 
@@ -51,7 +79,7 @@ Basic understanding of network segmentation.
 
 ## A. OWASP Top 10 (2021 Edition)
 
-With (https://owasp.org/www-project-top-ten/)[OWASP Top 10 (2021)]
+With [https://owasp.org/www-project-top-ten/](OWASP Top 10 (2021))
 
 ### A01:2021 - Broken Access Control
 
@@ -151,7 +179,37 @@ race conditions
 
 ## C. Attack Surface Mapping & Reconnaissance
 
+### Information Gathering: Passive vs. Active reconnaissance
+
+With this Attack vectors information should be disclosed that reveal sensitive information to Website Users e.g.:
+
+- Data about other users, such as usernames or financial information
+- Sensitive commercial or business data
+- Technical details about the website and its infrastructure
+
+Examples include:
+
+- Revealing the names of hidden directories, their structure, and their contents via a robots.txt file or directory listing
+- Providing access to source code files via temporary backups
+- Explicitly mentioning database table or column names in error messages
+- Unnecessarily exposing highly sensitive information, such as credit card details
+- Hard-coding API keys, IP addresses, database credentials, and so on in the source code
+- Hinting at the existence or absence of resources, usernames, and so on via subtle differences in application behavior
+
+### Subdomain Enumeration
+
+### Directory/File Enumeration
+
+### Port Scanning
+
+### Fingerprinting Technologies
+
+### OSINT (Open Source Intelligence) for web applications
+
 ## D. Exploitation Techniques
+
+Manual Exploitation: Understanding the mechanics of attacks.
+Automated Tools: Using scanners and exploit frameworks (e.g., Metasploit for relevant modules).
 
 # VI. Tools of the Trade for Web Security Research
 

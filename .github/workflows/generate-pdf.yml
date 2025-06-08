@@ -21,7 +21,7 @@ jobs:
           done
       - name: convert md to pdf with eisvogel template
         run: |
-          find docs/ -iname '*.md' -type f -exec sh -c 'pandoc "$0" -o "output/$(basename "$0" .md).pdf" --from markdown+table_captions --template /.pandoc/templates/eisvogel --listings' {} \;
+          find docs/ -iname '*.md' -type f -exec sh -c 'pandoc "$0" -o "output/$(basename "$0" .md).pdf" --table-of-contents=true --from markdown+table_captions --template /.pandoc/templates/eisvogel --listings' {} \;
       - uses: actions/upload-artifact@master
         with:
           name: output

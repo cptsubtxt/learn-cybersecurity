@@ -1,0 +1,28 @@
+# Ignoriere macOS-spezifische Dateien
+.DS_Store
+
+# Ignoriere Backup- und temporäre Dateien
+*~
+.#*
+.*.sw?
+
+# Ignoriere den Output-Ordner und dessen Inhalt
+output/
+output/**
+
+# Ignoriere generierte Dateien
+*.log
+
+# Ignoriere Editor-spezifische Dateien
+.vscode/
+.idea/
+
+# Ignoriere kompilierte Dateien
+*.aux
+*.out
+*.toc
+
+# Markdown und Mermaid-Dateien NICHT ignorieren!
+# (Nur zur Klarstellung, keine Einträge nötig)
+
+# Optional: Ignoriere andere temporäre
